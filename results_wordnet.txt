@@ -1,0 +1,292 @@
+========================================================================
+  DICTIONARY GRAPH ANALYSIS — WORDNET
+========================================================================
+
+─── Building Graph ───
+  Dictionary:          wordnet
+  Total words (nodes): 146,973
+  Total edges:         1,263,664
+  Avg edges per word:  8.6
+  Self-referential:    4,906 words define themselves
+  Build time:          1.0s
+  Self-ref examples:   a, aah, aba, abaca, abel, abelia, ablative, abnaki, abraham, absinthe, abstract, abyssinia, acacia, acanthus, accent
+
+  Starting word:       "dog"
+  Its definition:      a member of the genus Canis (probably descended from the common wolf) that has been domesticated by man since prehistoric times; occurs in many breeds; metal supports for logs in a fireplace; a hinged
+
+─── Connected Components (undirected graph) ───
+  Total components:    884
+  Computation time:    1.5s
+
+  Rank │   Size   │  % of total │ Sample words
+  ─────┼──────────┼─────────────┼─────────────────────────────
+     1 │  146,087 │       99.4% │ a, a battery, a bit, a capella singing, a cappella, ...
+     2 │        4 │        0.0% │ detransitivise, detransitivize, intransitivise, intransitivize
+     3 │        1 │        0.0% │ genus fagus
+     4 │        1 │        0.0% │ cogged
+     5 │        1 │        0.0% │ family osmeridae
+     6 │        1 │        0.0% │ anthoceros
+     7 │        1 │        0.0% │ petromyzontidae
+     8 │        1 │        0.0% │ genus tupinambis
+     9 │        1 │        0.0% │ genus martes
+    10 │        1 │        0.0% │ twirlingly
+    11 │        1 │        0.0% │ indocile
+    12 │        1 │        0.0% │ subphylum tunicata
+    13 │        1 │        0.0% │ jaculus
+    14 │        1 │        0.0% │ genus mazama
+    15 │        1 │        0.0% │ tenthredinidae
+    16 │        1 │        0.0% │ genus nucifraga
+    17 │        1 │        0.0% │ genus ceratonia
+    18 │        1 │        0.0% │ auriculate
+    19 │        1 │        0.0% │ scaridae
+    20 │        1 │        0.0% │ muntiacus
+  ... and 864 more components
+
+  Component size histogram:
+    Size        1:    882 component(s)
+    Size        4:      1 component(s)
+    Size  146,087:      1 component(s)
+
+─── Degrees of Separation from "dog" ───
+  Max depth to reach all reachable words: 17
+  BFS time: 0.0s
+
+  Depth │    New words │   Cumulative │  % of total
+  ──────┼──────────────┼──────────────┼─────────────
+      0 │            1 │            1 │        0.0%
+      1 │           51 │           52 │        0.0%
+      2 │          892 │          944 │        0.6%
+      3 │        4,600 │        5,544 │        3.8%
+      4 │        5,460 │       11,004 │        7.5%
+      5 │        2,960 │       13,964 │        9.5%
+      6 │        1,301 │       15,265 │       10.4%
+      7 │          599 │       15,864 │       10.8%
+      8 │          261 │       16,125 │       11.0%
+      9 │          104 │       16,229 │       11.0%
+     10 │           56 │       16,285 │       11.1%
+     11 │           23 │       16,308 │       11.1%
+     12 │           10 │       16,318 │       11.1%
+     13 │            5 │       16,323 │       11.1%
+     14 │            3 │       16,326 │       11.1%
+     15 │            3 │       16,329 │       11.1%
+     16 │            2 │       16,331 │       11.1%
+
+  ⚠ 130,642 words (88.9%) unreachable from "dog" via directed edges
+
+  (fragmentation analysis skipped — use --fragmentation to enable)
+
+─── Strongly Connected Components (directed graph) ───
+  Total SCCs:           129,962
+  Non-trivial (size≥2): 508
+  Computation time:     0.9s
+
+  SCC size distribution:
+    Size   16,308:      1 SCC(s)
+    Size       12:      1 SCC(s)
+    Size        6:      4 SCC(s)
+    Size        5:     15 SCC(s)
+    Size        4:     24 SCC(s)
+    Size        3:     78 SCC(s)
+    Size        2:    385 SCC(s)
+    Size        1: 129,454 SCC(s)
+
+  Top 10 SCCs:
+    #1:   16,308 words — a, aaron, abaft, abandon, abandoned, abandonment, abatement, abbess, ...
+    #2:       12 words — ascocarp, ascomycetes, ascomycetous, ascomycota, ascomycotina, discomycetes, eumycota, mastigomycota, ...
+    #3:        6 words — acetaminophen, datril, panadol, phenaphen, tempra, tylenol
+    #4:        6 words — asclepiadaceae, gentianales, loganiaceae, oleaceae, oleales, salvadoraceae
+    #5:        6 words — buckthorn, drupaceous, drupe, jujube, rhamnaceae, rhamnus
+    #6:        6 words — columbium, fergusonite, niobite, niobium, tantalite, tantalum
+    #7:        5 words — cornaceae, cornel, cornus, dogwood, umbellales
+    #8:        5 words — amoxil, augmentin, larotid, polymox, trimox
+    #9:        5 words — decadron, dexamethasone, dexone, hexadrol, oradexon
+    #10:        5 words — aruru, ki, mama, ninkhursag, nintu
+
+─── Shortest Definitional Loops ───
+  Shortest cycle length: 2
+  Examples found:        20
+  Search time:           0.0s
+
+      1. able → ability → able
+      2. last → end → last
+      3. last → continue → last
+      4. cut → piece → cut
+      5. cut → hew → cut
+      6. cut → furrow → cut
+      7. cut → grass → cut
+      8. cut → reduce → cut
+      9. cut → cutting → cut
+     10. cut → slit → cut
+     11. cut → trench → cut
+     12. cut → wound → cut
+     13. absolute → relative → absolute
+     14. direct → address → direct
+     15. direct → point → direct
+    ... and 5 more
+
+─── Longest Definitional Loops (time budget: 60s) ───
+  SCC #1 (size 16,308): heuristic search (60s budget)...
+    ... 20 attempts in 0.6s, best cycle: 2006, walk cap: 4077
+    ... 40 attempts in 1.1s, best cycle: 2006, walk cap: 1000
+    ... 60 attempts in 1.9s, best cycle: 2007, walk cap: 250
+    ... 80 attempts in 2.7s, best cycle: 2009, walk cap: 50
+    ... 100 attempts in 3.3s, best cycle: 2009, walk cap: 10
+    ... 120 attempts in 3.9s, best cycle: 2009, walk cap: 5000
+    ... 140 attempts in 4.5s, best cycle: 2009, walk cap: 2000
+    ... 160 attempts in 5.4s, best cycle: 2009, walk cap: 500
+    ... 180 attempts in 5.9s, best cycle: 2009, walk cap: 100
+    ... 200 attempts in 6.6s, best cycle: 2013, walk cap: 25
+    ... 220 attempts in 7.1s, best cycle: 2013, walk cap: 8154
+    ... 240 attempts in 7.6s, best cycle: 2013, walk cap: 4077
+    ... 260 attempts in 8.2s, best cycle: 2013, walk cap: 1000
+    ... 280 attempts in 8.7s, best cycle: 2013, walk cap: 250
+    ... 300 attempts in 9.4s, best cycle: 2013, walk cap: 50
+    ... 320 attempts in 10.1s, best cycle: 2013, walk cap: 10
+    ... 340 attempts in 10.9s, best cycle: 2013, walk cap: 5000
+    ... 360 attempts in 11.5s, best cycle: 2013, walk cap: 2000
+    ... 380 attempts in 11.9s, best cycle: 2013, walk cap: 500
+    ... 400 attempts in 12.4s, best cycle: 2013, walk cap: 100
+    ... 420 attempts in 12.8s, best cycle: 2013, walk cap: 25
+    ... 440 attempts in 13.5s, best cycle: 2013, walk cap: 8154
+    ... 460 attempts in 13.9s, best cycle: 2013, walk cap: 4077
+    ... 480 attempts in 14.6s, best cycle: 2013, walk cap: 1000
+    ... 500 attempts in 15.3s, best cycle: 2013, walk cap: 250
+    ... 520 attempts in 16.0s, best cycle: 2013, walk cap: 50
+    ... 540 attempts in 16.6s, best cycle: 2013, walk cap: 10
+    ... 560 attempts in 17.1s, best cycle: 2013, walk cap: 5000
+    ... 580 attempts in 17.7s, best cycle: 2013, walk cap: 2000
+    ... 600 attempts in 18.0s, best cycle: 2013, walk cap: 500
+    ... 620 attempts in 18.6s, best cycle: 2013, walk cap: 100
+    ... 640 attempts in 19.3s, best cycle: 2013, walk cap: 25
+    ... 660 attempts in 19.9s, best cycle: 2013, walk cap: 8154
+    ... 680 attempts in 20.4s, best cycle: 2013, walk cap: 4077
+    ... 700 attempts in 20.9s, best cycle: 2013, walk cap: 1000
+    ... 720 attempts in 21.6s, best cycle: 2013, walk cap: 250
+    ... 740 attempts in 22.3s, best cycle: 2013, walk cap: 50
+    ... 760 attempts in 22.9s, best cycle: 2013, walk cap: 10
+    ... 780 attempts in 23.3s, best cycle: 2013, walk cap: 5000
+    ... 800 attempts in 24.0s, best cycle: 2013, walk cap: 2000
+    ... 820 attempts in 24.5s, best cycle: 2013, walk cap: 500
+    ... 840 attempts in 25.1s, best cycle: 2013, walk cap: 100
+    ... 860 attempts in 25.8s, best cycle: 2013, walk cap: 25
+    ... 880 attempts in 26.4s, best cycle: 2013, walk cap: 8154
+    ... 900 attempts in 26.9s, best cycle: 2013, walk cap: 4077
+    ... 920 attempts in 27.5s, best cycle: 2013, walk cap: 1000
+    ... 940 attempts in 27.9s, best cycle: 2013, walk cap: 250
+    ... 960 attempts in 28.4s, best cycle: 2013, walk cap: 50
+    ... 980 attempts in 29.0s, best cycle: 2013, walk cap: 10
+    ... 1000 attempts in 29.5s, best cycle: 2013, walk cap: 5000
+    ... 1020 attempts in 30.0s, best cycle: 2013, walk cap: 2000
+    ... 1040 attempts in 30.6s, best cycle: 2013, walk cap: 500
+    ... 1060 attempts in 31.2s, best cycle: 2013, walk cap: 100
+    ... 1080 attempts in 31.8s, best cycle: 2013, walk cap: 25
+    ... 1100 attempts in 32.4s, best cycle: 2013, walk cap: 8154
+    ... 1120 attempts in 33.1s, best cycle: 2013, walk cap: 4077
+    ... 1140 attempts in 33.7s, best cycle: 2013, walk cap: 1000
+    ... 1160 attempts in 34.3s, best cycle: 2013, walk cap: 250
+    ... 1180 attempts in 34.9s, best cycle: 2013, walk cap: 50
+    ... 1200 attempts in 35.5s, best cycle: 2013, walk cap: 10
+    ... 1220 attempts in 36.1s, best cycle: 2013, walk cap: 5000
+    ... 1240 attempts in 36.4s, best cycle: 2016, walk cap: 2000
+    ... 1260 attempts in 36.9s, best cycle: 2016, walk cap: 500
+    ... 1280 attempts in 37.4s, best cycle: 2016, walk cap: 100
+    ... 1300 attempts in 38.1s, best cycle: 2016, walk cap: 25
+    ... 1320 attempts in 38.8s, best cycle: 2016, walk cap: 8154
+    ... 1340 attempts in 39.5s, best cycle: 2016, walk cap: 4077
+    ... 1360 attempts in 40.2s, best cycle: 2016, walk cap: 1000
+    ... 1380 attempts in 40.8s, best cycle: 2016, walk cap: 250
+    ... 1400 attempts in 41.3s, best cycle: 2016, walk cap: 50
+    ... 1420 attempts in 41.9s, best cycle: 2016, walk cap: 10
+    ... 1440 attempts in 42.4s, best cycle: 2016, walk cap: 5000
+    ... 1460 attempts in 43.1s, best cycle: 2016, walk cap: 2000
+    ... 1480 attempts in 43.5s, best cycle: 2016, walk cap: 500
+    ... 1500 attempts in 44.2s, best cycle: 2016, walk cap: 100
+    ... 1520 attempts in 44.9s, best cycle: 2016, walk cap: 25
+    ... 1540 attempts in 45.5s, best cycle: 2016, walk cap: 8154
+    ... 1560 attempts in 45.8s, best cycle: 2016, walk cap: 4077
+    ... 1580 attempts in 46.3s, best cycle: 2016, walk cap: 1000
+    ... 1600 attempts in 46.9s, best cycle: 2016, walk cap: 250
+    ... 1620 attempts in 47.7s, best cycle: 2016, walk cap: 50
+    ... 1640 attempts in 48.2s, best cycle: 2016, walk cap: 10
+    ... 1660 attempts in 48.9s, best cycle: 2016, walk cap: 5000
+    ... 1680 attempts in 49.2s, best cycle: 2016, walk cap: 2000
+    ... 1700 attempts in 49.6s, best cycle: 2016, walk cap: 500
+    ... 1720 attempts in 50.3s, best cycle: 2016, walk cap: 100
+    ... 1740 attempts in 51.0s, best cycle: 2016, walk cap: 25
+    ... 1760 attempts in 51.7s, best cycle: 2016, walk cap: 8154
+    ... 1780 attempts in 52.3s, best cycle: 2016, walk cap: 4077
+    ... 1800 attempts in 53.0s, best cycle: 2016, walk cap: 1000
+    ... 1820 attempts in 53.7s, best cycle: 2016, walk cap: 250
+    ... 1840 attempts in 54.2s, best cycle: 2016, walk cap: 50
+    ... 1860 attempts in 54.9s, best cycle: 2016, walk cap: 10
+    ... 1880 attempts in 55.5s, best cycle: 2016, walk cap: 5000
+    ... 1900 attempts in 56.0s, best cycle: 2016, walk cap: 2000
+    ... 1920 attempts in 56.7s, best cycle: 2016, walk cap: 500
+    ... 1940 attempts in 57.1s, best cycle: 2016, walk cap: 100
+    ... 1960 attempts in 57.8s, best cycle: 2016, walk cap: 25
+    ... 1980 attempts in 58.5s, best cycle: 2016, walk cap: 8154
+    ... 2000 attempts in 59.2s, best cycle: 2016, walk cap: 4077
+    ... 2020 attempts in 59.9s, best cycle: 2016, walk cap: 1000
+    Done: 2024 attempts in 60.1s, best cycle: 2016
+  SCC #2 (size 12): exact search...
+  SCC #3 (size 6): exact search...
+  SCC #4 (size 6): exact search...
+  SCC #5 (size 6): exact search...
+  SCC #6 (size 6): exact search...
+  SCC #7 (size 5): exact search...
+  SCC #8 (size 5): exact search...
+  SCC #9 (size 5): exact search...
+  SCC #10 (size 5): exact search...
+  (skipping 498 smaller SCCs for longest-cycle search)
+  Search time: 60.1s
+
+  #1: length 2,016  (heuristic (SCC size 16,308, upper bound = 16,308))
+       corridor → open → hidden → find → after → time → given → a → dna → double
+         ... (2001 more) ...
+       gunwale → planking → flooring → hallway → corridor
+
+  #2: length 8  (exact (exhaustive, SCC size 12))
+       perithecium → ascocarp → ascomycetous → ascomycetes → ascomycota → eumycota → ascomycotina → pyrenomycetes → perithecium
+
+  #3: length 6  (exact (exhaustive, SCC size 6))
+       acetaminophen → datril → tempra → panadol → phenaphen → tylenol → acetaminophen
+
+  #4: length 6  (exact (exhaustive, SCC size 6))
+       rhamnaceae → drupaceous → drupe → jujube → buckthorn → rhamnus → rhamnaceae
+
+  #5: length 5  (exact (exhaustive, SCC size 5))
+       trimox → larotid → amoxil → polymox → augmentin → trimox
+
+  #6: length 5  (exact (exhaustive, SCC size 5))
+       oradexon → dexamethasone → decadron → hexadrol → dexone → oradexon
+
+  #7: length 4  (exact (exhaustive, SCC size 6))
+       oleaceae → oleales → gentianales → salvadoraceae → oleaceae
+
+  #8: length 3  (exact (exhaustive, SCC size 6))
+       niobite → tantalum → tantalite → niobite
+
+  #9: length 2  (exact (exhaustive, SCC size 5))
+       dogwood → cornus → dogwood
+
+  #10: length 2  (exact (exhaustive, SCC size 5))
+       nintu → ninkhursag → nintu
+
+
+════════════════════════════════════════════════════════════════════════
+  SUMMARY
+════════════════════════════════════════════════════════════════════════
+  Dictionary:              wordnet
+  Total words:             146,973
+  Total edges:             1,263,664
+  Connected components:    884
+  Largest component:       146,087 (99.4%)
+  Strongly connected comp: 129,962
+  Largest SCC:             16,308 (11.1%)
+  BFS max depth:           17 (from "dog")
+  Self-referential words:  4,906
+  Shortest cycle:          2
+  Longest cycle found:     2,016 (heuristic (SCC size 16,308, upper bound = 16,308))
+
+  Results written to: results_wordnet.txt
+════════════════════════════════════════════════════════════════════════

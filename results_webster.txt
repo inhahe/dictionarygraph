@@ -1,0 +1,330 @@
+========================================================================
+  DICTIONARY GRAPH ANALYSIS — WEBSTER
+========================================================================
+
+─── Building Graph ───
+  Dictionary:          webster
+  Total words (nodes): 102,118
+  Total edges:         1,837,451
+  Avg edges per word:  18.0
+  Self-referential:    27,924 words define themselves
+  Build time:          1.6s
+  Self-ref examples:   a, a-mornings, a-tiptoe, aback, abactinal, abacus, abaddon, abaft, aband, abandon, abandoned, abandonment, abase, abash, abatable
+
+  Starting word:       "apple"
+  Its definition:      1. The fleshy pome or fruit of a rosaceous tree (Pyrus malus) cultivated in numberless varieties in the temperate zones. Note: The European crab apple is supposed to be the original kind, from which a
+
+─── Connected Components (undirected graph) ───
+  Total components:    249
+  Computation time:    2.1s
+
+  Rank │   Size   │  % of total │ Sample words
+  ─────┼──────────┼─────────────┼─────────────────────────────
+     1 │  101,868 │       99.8% │ a, a b c, a cappella, a cheval, a fortiori, ...
+     2 │        2 │        0.0% │ anguineal, anguineous
+     3 │        2 │        0.0% │ intempestivity, untimeliness
+     4 │        1 │        0.0% │ synonymally
+     5 │        1 │        0.0% │ populosity
+     6 │        1 │        0.0% │ nephilim
+     7 │        1 │        0.0% │ eyghen
+     8 │        1 │        0.0% │ indesirable
+     9 │        1 │        0.0% │ cankeredly
+    10 │        1 │        0.0% │ cacophonious
+    11 │        1 │        0.0% │ decadent
+    12 │        1 │        0.0% │ uncautiously
+    13 │        1 │        0.0% │ ululant
+    14 │        1 │        0.0% │ sportability
+    15 │        1 │        0.0% │ thankly
+    16 │        1 │        0.0% │ unthriftihead
+    17 │        1 │        0.0% │ loathliness
+    18 │        1 │        0.0% │ microphyllous
+    19 │        1 │        0.0% │ dejectly
+    20 │        1 │        0.0% │ abandonedly
+  ... and 229 more components
+
+  Component size histogram:
+    Size        1:    246 component(s)
+    Size        2:      2 component(s)
+    Size  101,868:      1 component(s)
+
+─── Directed BFS from "apple" ───
+  (follow definition links outward: A→B means B appears in A's definition)
+  Max depth to reach all reachable words: 11
+  BFS time: 0.2s
+
+  Depth │    New words │   Cumulative │  % of total
+  ──────┼──────────────┼──────────────┼─────────────
+      0 │            1 │            1 │        0.0%
+      1 │          157 │          158 │        0.2%
+      2 │        5,541 │        5,699 │        5.6%
+      3 │       16,911 │       22,610 │       22.1%
+      4 │        7,719 │       30,329 │       29.7%
+      5 │        1,868 │       32,197 │       31.5%
+      6 │          450 │       32,647 │       32.0%
+      7 │          101 │       32,748 │       32.1%
+      8 │           25 │       32,773 │       32.1%
+      9 │            9 │       32,782 │       32.1%
+     10 │            2 │       32,784 │       32.1%
+
+  ⚠ 69,334 words (67.9%) unreachable from "apple" via directed edges
+
+─── Undirected BFS from "apple" (true degrees of separation) ───
+  (A↔B if A's definition mentions B  OR  B's definition mentions A)
+  Max depth to reach all reachable words: 5
+  BFS time: 1.7s
+
+  Depth │    New words │   Cumulative │  % of total
+  ──────┼──────────────┼──────────────┼─────────────
+      0 │            1 │            1 │        0.0%
+      1 │          298 │          299 │        0.3%
+      2 │       94,525 │       94,824 │       92.9%
+      3 │        7,001 │      101,825 │       99.7%
+      4 │           43 │      101,868 │       99.8%
+
+  ⚠ 250 words (0.2%) unreachable from "apple" even in undirected graph
+
+─── Island Fragmentation (unexplored territory at each directed BFS depth) ───
+  Computation time: 5.1s
+
+  Depth │ Unreached islands │ Largest island sizes
+  ──────┼───────────────────┼────────────────────────────────
+      0 │               249 │ 101,867, 2, 2, 1, 1
+      1 │               759 │ 101,185, 3, 2, 2, 2
+      2 │            15,494 │ 79,504, 10, 8, 8, 8
+      3 │            48,803 │ 14,584, 62, 52, 50, 45
+      4 │            53,522 │ 293, 250, 153, 141, 120
+      5 │            53,724 │ 207, 181, 65, 63, 63
+      6 │            53,822 │ 176, 143, 63, 56, 55
+      7 │            53,828 │ 171, 141, 63, 55, 49
+      8 │            53,843 │ 169, 118, 63, 55, 49
+      9 │            53,838 │ 169, 118, 63, 55, 49
+     10 │            53,837 │ 169, 118, 63, 55, 49
+
+─── Strongly Connected Components (directed graph) ───
+  Total SCCs:           67,668
+  Non-trivial (size≥2): 1,410
+  Computation time:     1.2s
+
+  SCC size distribution:
+    Size   32,763:      1 SCC(s)
+    Size       10:      1 SCC(s)
+    Size        9:      1 SCC(s)
+    Size        7:      1 SCC(s)
+    Size        6:      7 SCC(s)
+    Size        5:      8 SCC(s)
+    Size        4:     31 SCC(s)
+    Size        3:    145 SCC(s)
+    Size        2:  1,215 SCC(s)
+    Size        1: 66,258 SCC(s)
+
+  Top 10 SCCs:
+    #1:   32,763 words — a, aard-vark, ab, abaca, aback, abacus, abaft, abalone, ...
+    #2:       10 words — analcime, desmine, heulandite, mesole, natrolite, needlestone, stilbite, thomsonite, ...
+    #3:        9 words — albuminose, albumose, amphopeptone, antialbumose, antipeptone, hemialbumin, hemialbumose, hemipeptone, ...
+    #4:        7 words — dziggetai, gour, hemionus, kiang, koulan, kulan, onager
+    #5:        6 words — cannula, cannular, cannulated, canula, canular, canulated
+    #6:        6 words — fascet, pontee, ponty, puntel, puntil, punty
+    #7:        6 words — geic, gein, humic, humin, ulmic, ulmin
+    #8:        6 words — pearlite, pearlstone, perlite, perlitic, spherulite, spherulitic
+    #9:        6 words — flotsam, jetsam, jetson, jettison, lagan, ligan
+    #10:        6 words — bote, firebote, haybote, hedgebote, housebote, plowbote
+
+─── Shortest Definitional Loops ───
+  Shortest cycle length: 2
+  Search time:           0.0s
+
+      1. self-murder → suicide → self-murder
+      2. anacardium → cashew → anacardium
+      3. hawser → cable → hawser
+      4. leucic → oxycaproic → leucic
+      5. conspirator → plotter → conspirator
+      6. wobble → wabble → wobble
+      7. yahwe → yahweh → yahwe
+      8. saline → water → saline
+      9. saline → salt → saline
+     10. grumose → grumous → grumose
+     11. faquir → fakir → faquir
+     12. old-fashioned → old → old-fashioned
+     13. old-fashioned → obsolete → old-fashioned
+     14. vague → sothiac → vague
+     15. vague → indefinite → vague
+    ... and 5 more shown
+
+  Counting ALL mutual-definition pairs (2-cycles)...
+  Total 2-cycles in dictionary: 45,446
+  Count time: 1.0s
+  Sample pairs:
+    self-murder <-> suicide
+    anacardium <-> cashew
+    cable <-> hawser
+    leucic <-> oxycaproic
+    conspirator <-> plotter
+    wabble <-> wobble
+    yahwe <-> yahweh
+    saline <-> water
+    saline <-> salt
+    grumose <-> grumous
+    fakir <-> faquir
+    old <-> old-fashioned
+    obsolete <-> old-fashioned
+    sothiac <-> vague
+    indefinite <-> vague
+    lax <-> vague
+    loose <-> vague
+    fetlock <-> pastern
+    selenic <-> selenious
+    being <-> signification
+    ... and 45,426 more
+
+─── Longest Definitional Loops (time budget: 90s) ───
+  SCC #1 (size 32,763): heuristic search (90s budget)...
+    ... 20 attempts in 1.6s, best cycle: 504, walk cap: 5000
+    ... 40 attempts in 3.2s, best cycle: 504, walk cap: 1000
+    ... 60 attempts in 4.2s, best cycle: 504, walk cap: 250
+    ... 80 attempts in 5.6s, best cycle: 504, walk cap: 50
+    ... 100 attempts in 6.7s, best cycle: 505, walk cap: 10
+    ... 120 attempts in 7.7s, best cycle: 505, walk cap: 8190
+    ... 140 attempts in 9.3s, best cycle: 505, walk cap: 2000
+    ... 160 attempts in 10.6s, best cycle: 505, walk cap: 500
+    ... 180 attempts in 11.9s, best cycle: 505, walk cap: 100
+    ... 200 attempts in 12.5s, best cycle: 505, walk cap: 25
+    ... 220 attempts in 13.1s, best cycle: 505, walk cap: 16381
+    ... 240 attempts in 14.7s, best cycle: 1004, walk cap: 5000
+    ... 260 attempts in 16.6s, best cycle: 1004, walk cap: 1000
+    ... 280 attempts in 17.4s, best cycle: 1004, walk cap: 250
+    ... 300 attempts in 18.1s, best cycle: 1004, walk cap: 50
+    ... 320 attempts in 19.5s, best cycle: 1004, walk cap: 10
+    ... 340 attempts in 20.7s, best cycle: 1004, walk cap: 8190
+    ... 360 attempts in 21.6s, best cycle: 1004, walk cap: 2000
+    ... 380 attempts in 22.8s, best cycle: 1004, walk cap: 500
+    ... 400 attempts in 23.5s, best cycle: 1004, walk cap: 100
+    ... 420 attempts in 24.8s, best cycle: 1004, walk cap: 25
+    ... 440 attempts in 26.3s, best cycle: 1004, walk cap: 16381
+    ... 460 attempts in 27.9s, best cycle: 1004, walk cap: 5000
+    ... 480 attempts in 28.7s, best cycle: 1004, walk cap: 1000
+    ... 500 attempts in 30.1s, best cycle: 1004, walk cap: 250
+    ... 520 attempts in 31.0s, best cycle: 1004, walk cap: 50
+    ... 540 attempts in 32.1s, best cycle: 1004, walk cap: 10
+    ... 560 attempts in 33.1s, best cycle: 1004, walk cap: 8190
+    ... 580 attempts in 34.4s, best cycle: 1004, walk cap: 2000
+    ... 600 attempts in 36.2s, best cycle: 1005, walk cap: 500
+    ... 620 attempts in 37.2s, best cycle: 1005, walk cap: 100
+    ... 640 attempts in 38.4s, best cycle: 1005, walk cap: 25
+    ... 660 attempts in 39.4s, best cycle: 1005, walk cap: 16381
+    ... 680 attempts in 40.3s, best cycle: 1005, walk cap: 5000
+    ... 700 attempts in 41.5s, best cycle: 1005, walk cap: 1000
+    ... 720 attempts in 43.2s, best cycle: 1005, walk cap: 250
+    ... 740 attempts in 44.4s, best cycle: 1005, walk cap: 50
+    ... 760 attempts in 45.4s, best cycle: 1005, walk cap: 10
+    ... 780 attempts in 46.4s, best cycle: 1005, walk cap: 8190
+    ... 800 attempts in 47.7s, best cycle: 1005, walk cap: 2000
+    ... 820 attempts in 48.7s, best cycle: 1005, walk cap: 500
+    ... 840 attempts in 49.7s, best cycle: 1005, walk cap: 100
+    ... 860 attempts in 50.4s, best cycle: 1005, walk cap: 25
+    ... 880 attempts in 51.4s, best cycle: 1005, walk cap: 16381
+    ... 900 attempts in 52.8s, best cycle: 1005, walk cap: 5000
+    ... 920 attempts in 53.9s, best cycle: 1005, walk cap: 1000
+    ... 940 attempts in 55.0s, best cycle: 1005, walk cap: 250
+    ... 960 attempts in 56.3s, best cycle: 1005, walk cap: 50
+    ... 980 attempts in 57.3s, best cycle: 1005, walk cap: 10
+    ... 1000 attempts in 58.3s, best cycle: 1005, walk cap: 8190
+    ... 1020 attempts in 59.8s, best cycle: 1005, walk cap: 2000
+    ... 1040 attempts in 61.5s, best cycle: 1005, walk cap: 500
+    ... 1060 attempts in 62.4s, best cycle: 1005, walk cap: 100
+    ... 1080 attempts in 63.1s, best cycle: 1005, walk cap: 25
+    ... 1100 attempts in 64.0s, best cycle: 1005, walk cap: 16381
+    ... 1120 attempts in 65.5s, best cycle: 1005, walk cap: 5000
+    ... 1140 attempts in 66.5s, best cycle: 1005, walk cap: 1000
+    ... 1160 attempts in 67.6s, best cycle: 1005, walk cap: 250
+    ... 1180 attempts in 68.5s, best cycle: 1005, walk cap: 50
+    ... 1200 attempts in 69.9s, best cycle: 1005, walk cap: 10
+    ... 1220 attempts in 70.9s, best cycle: 1005, walk cap: 8190
+    ... 1240 attempts in 71.8s, best cycle: 1005, walk cap: 2000
+    ... 1260 attempts in 72.7s, best cycle: 1005, walk cap: 500
+    ... 1280 attempts in 74.1s, best cycle: 1005, walk cap: 100
+    ... 1300 attempts in 75.0s, best cycle: 1005, walk cap: 25
+    ... 1320 attempts in 76.8s, best cycle: 1005, walk cap: 16381
+    ... 1340 attempts in 78.3s, best cycle: 1005, walk cap: 5000
+    ... 1360 attempts in 79.3s, best cycle: 1005, walk cap: 1000
+    ... 1380 attempts in 80.9s, best cycle: 1005, walk cap: 250
+    ... 1400 attempts in 82.6s, best cycle: 1005, walk cap: 50
+    ... 1420 attempts in 83.7s, best cycle: 1005, walk cap: 10
+    ... 1440 attempts in 84.5s, best cycle: 1005, walk cap: 8190
+    ... 1460 attempts in 85.3s, best cycle: 1005, walk cap: 2000
+    ... 1480 attempts in 86.8s, best cycle: 1005, walk cap: 500
+    ... 1500 attempts in 87.7s, best cycle: 1005, walk cap: 100
+    ... 1520 attempts in 88.7s, best cycle: 1005, walk cap: 25
+    ... 1540 attempts in 89.6s, best cycle: 1005, walk cap: 16381
+    Done: 1547 attempts in 90.0s, best cycle: 1005
+  SCC #2 (size 10): exact search...
+  SCC #3 (size 9): exact search...
+  SCC #4 (size 7): exact search...
+  SCC #5 (size 6): exact search...
+  SCC #6 (size 6): exact search...
+  SCC #7 (size 6): exact search...
+  SCC #8 (size 6): exact search...
+  SCC #9 (size 6): exact search...
+  SCC #10 (size 6): exact search...
+  (skipping 1400 smaller SCCs for longest-cycle search)
+  Search time: 90.2s
+
+  #1: length 1,005  (heuristic (SCC size 32,763, upper bound = 32,763))
+       wheal → by → fail → take → inclose → with → she → common → herself → come
+         ... (990 more) ...
+       small → reproach → wall → wale → wheal
+
+  #2: length 6  (exact (exhaustive, SCC size 6))
+       canular → cannulated → canulated → cannula → canula → cannular → canular
+
+  #3: length 6  (exact (exhaustive, SCC size 6))
+       pearlite → spherulitic → spherulite → pearlstone → perlitic → perlite → pearlite
+
+  #4: length 5  (exact (exhaustive, SCC size 9))
+       antialbumose → albumose → hemialbumose → hemipeptone → peptone → antialbumose
+
+  #5: length 5  (exact (exhaustive, SCC size 6))
+       jettison → jetsam → ligan → flotsam → jetson → jettison
+
+  #6: length 3  (exact (exhaustive, SCC size 10))
+       natrolite → zeolite → needlestone → natrolite
+
+  #7: length 3  (exact (exhaustive, SCC size 7))
+       onager → koulan → dziggetai → onager
+
+  #8: length 3  (exact (exhaustive, SCC size 6))
+       punty → pontee → fascet → punty
+
+  #9: length 3  (exact (exhaustive, SCC size 6))
+       ulmic → ulmin → humin → ulmic
+
+  #10: length 3  (exact (exhaustive, SCC size 6))
+       firebote → bote → housebote → firebote
+
+
+========================================================================
+  SUMMARY
+========================================================================
+  Dictionary:                webster
+  Total words:               102,118
+  Total directed edges:      1,837,451
+  Avg edges per word:        18.0
+
+  --- Connectivity ---
+  Connected components:      249
+  Largest component:         101,868 (99.8%)
+  Isolated islands:          248
+  Strongly connected comps:  67,668
+  Largest SCC:               32,763 (32.1%)
+
+  --- Degrees of Separation (from "apple") ---
+  Directed BFS max depth:    11 (reached 32.1%)
+  Undirected BFS max depth:  5 (reached 99.8%)
+
+  --- Cycles ---
+  Self-referential words:    27,924 (27.3%)
+  Total 2-cycles (pairs):    45,446
+  Shortest cycle:            2
+  Longest cycle found:       1,005 (heuristic (SCC size 32,763, upper bound = 32,763))
+
+  Results written to: results_webster.txt
+========================================================================
